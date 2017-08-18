@@ -1,0 +1,19 @@
+{
+  "name": "blog-demos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fixate/blog-demos.git"
+  },
+  "author": "Larry Botha <larry@fixate.it>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-prettier": "^2.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/fixate/blog-demos/issues"
+  },
+  "homepage": "https://github.com/fixate/blog-demos#readme",
+  "description": ""
+}
