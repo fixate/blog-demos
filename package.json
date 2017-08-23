@@ -9,7 +9,9 @@
   "author": "Larry Botha <larry@fixate.it>",
   "license": "MIT",
   "devDependencies": {
-    "eslint-config-prettier": "^2.3.0"
+    "eslint-config-prettier": "^2.3.0",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.5.5"
   },
   "bugs": {
     "url": "https://github.com/fixate/blog-demos/issues"
