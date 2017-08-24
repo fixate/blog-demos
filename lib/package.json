@@ -10,12 +10,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
-    "start": "serve build -s -c 1",
     "prestart": "npm run build",
-    "build": "cross-env NODE_ENV=production webpack --progress",
-    "prebuild": "mkdirp build && ncp src build",
-    "test": "npm run -s lint && $(npm bin)/babel-tape-runner ${glob} | $(npm bin)/faucet",
-    "test:watch": "npm run -s test -- --watch",
+    "test": "npm run -s lint && $(npm bin)/babel-tape-runner ./src/**/*.test.js | $(npm bin)/faucet",
+    "test:watch": "tape-watch -r babel-register ./src/**/*.test.js | faucet",
     "lint": "eslint src test"
   },
   "devDependencies": {
@@ -36,7 +33,9 @@
     "prettier": "^1.5.3",
     "pug": "^2.0.0-rc.3",
     "pug-loader": "^2.3.0",
+    "tap": "^10.7.2",
     "tape": "^4.8.0",
+    "tape-watch": "^2.3.0",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1"
   },
@@ -48,6 +47,15 @@
   "dependencies": {
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
-    "radium": "^0.19.4"
+    "radium": "^0.19.4",
+    "uuid": "^3.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      {
+        "presets": ["es2015"]
+      }
+    ]
   }
 }

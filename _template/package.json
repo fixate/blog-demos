@@ -15,7 +15,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress",
     "prebuild": "mkdirp build && ncp src build",
     "test": "npm run -s lint && $(npm bin)/babel-tape-runner ${glob} | $(npm bin)/faucet",
-    "test:watch": "npm run -s test -- --watch",
+    "test:watch": "tape-watch -r babel-register ./src/**/*.test.js | faucet",
     "lint": "eslint src test"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
     "pug": "^2.0.0-rc.3",
     "pug-loader": "^2.3.0",
     "tape": "^4.8.0",
+    "tape-watch": "^2.3.0",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1"
   },

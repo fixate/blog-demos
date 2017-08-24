@@ -43,10 +43,11 @@ const webpackConfFactory = (dirname = __dirname) => ({
 
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      template: './index.ejs',
-      minify: {collapseWhitespace: true},
-    }),
+    // add your specific template in the subfolder's webpack
+    // new HtmlWebpackPlugin({
+    //   template: `src/index.ejs`,
+    //   minify: {collapseWhitespace: true},
+    // }),
   ].concat(
     ENV === 'production'
       ? [

@@ -9,9 +9,16 @@ module.exports = Object.assign({}, webpackConf, {
   },
 
   resolve: Object.assign({}, webpackConf.resolve, {
-      alias: {
-        react: 'preact-compat',
-        'react-dom': 'preact-compat',
-      },
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat',
+    },
   }),
+
+  plugins: webpackConf.plugins.concat([
+    new HtmlWebpackPlugin({
+      template: `components/index.ejs`,
+      minify: {collapseWhitespace: true},
+    }),
+  ]),
 });
